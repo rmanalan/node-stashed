@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="stashed : Handlebars templates for CLIs" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>stashed</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/rmanalan/node-stashed">View on GitHub</a>
+
+          <h1 id="project_title">stashed</h1>
+          <h2 id="project_tagline">Handlebars templates for CLIs</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/rmanalan/node-stashed/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/rmanalan/node-stashed/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>stashed</h1>
+
+<p><a href="handlebarsjs.com">Handlebars</a> templates for CLIs! Now you can groom your stash on the command line too. Now with <a href="https://npmjs.org/package/colors">colors</a>!</p>
+
+<p>If you're building a CLI and want to keep the nasty string manipulations out your well crafted code, use this.</p>
+
+<h2>Usage</h2>
+
+<p>First add <code>stashed</code> to your deps or install manually:</p>
+
+<pre><code>npm i stashed
+</code></pre>
+
+<p>Next:</p>
+
+<pre><code>var stashed = require('stashed');
+var render = stashed({
+  templateDir: "./templates"
+});
+
+console.log(render('basics'));
+
+console.log(render('with_binds',{
+  answer: "two",
+  name: "Rich"
+}));
+</code></pre>
+
+<p>Inside <code>./templates/basics.hbs</code>, you'll find:</p>
+
+<pre><code>{{#rainbow}}Skittles, taste the rainbow{{/rainbow}}
+</code></pre>
+
+<p>Which will render this in your terminal:</p>
+
+<p><img src="http://f.cl.ly/items/1F1n1X191S2a1V0m3P3K/Screen%20Shot%202013-04-25%20at%2012.26.42%20AM.png" alt="Rainbows!"></p>
+
+<p>Inside <code>./templates/with_binds.hbs</code>, you'll find:</p>
+
+<pre><code>This template has some binds:
+
+  1 + 1 = {{answer}}
+
+Hello {{#inverse}}{{name}}{{/inverse}}!
+</code></pre>
+
+<p>This will render:</p>
+
+<p><img src="http://f.cl.ly/items/3R412c1O1R090p021J0R/Screen%20Shot%202013-04-25%20at%2012.31.08%20AM.png" alt="Binds"></p>
+
+<h2>Supported colors and styles</h2>
+
+<p>Stashed uses <a href="https://twitter.com/marak">@marak</a>'s awesome <a href="https://github.com/Marak/colors.js">colors.js</a>. Stashed exposes colors.js' colors and styles as Handlebars helpers:</p>
+
+<ul>
+<li>bold</li>
+<li>underline</li>
+<li>italic</li>
+<li>inverse</li>
+<li>grey</li>
+<li>black</li>
+<li>yellow</li>
+<li>red</li>
+<li>green</li>
+<li>blue</li>
+<li>white</li>
+<li>cyan</li>
+<li>magenta</li>
+<li>rainbow</li>
+<li>zebra</li>
+<li>zalgo</li>
+</ul><p>To use these, all you have to do is wrap your text with <code>{{#style}}text{{/style}}</code>. You can nest styles too.</p>
+
+<h2>Contribute</h2>
+
+<p>Go nuts, but don't forget to send me some <a href="https://github.com/rmanalan/node-stashed">pull requests</a>!</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">stashed maintained by <a href="https://github.com/rmanalan">rmanalan</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
