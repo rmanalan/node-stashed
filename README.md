@@ -46,4 +46,4 @@ This will render:
 
 ## Contribute
 
-Go nuts, but don't forget me some pull requests!
+Go nuts, but don't forget me some [pull requests](https://github.com/rmanalan/node-stashed)!

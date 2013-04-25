@@ -11,7 +11,7 @@
     "colors": "*",
     "lodash": "*"
   },
-  "repository": "",
+  "repository": "https://github.com/rmanalan/node-stashed",
   "keywords": [
     "cli",
     "templates"
