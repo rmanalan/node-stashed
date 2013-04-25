@@ -69,4 +69,4 @@ To use these, all you have to do is wrap your text with `{{#style}}text{{/style}
 
 ## Contribute
 
-Go nuts, but don't forget me some [pull requests](https://github.com/rmanalan/node-stashed)!
+Go nuts, but don't forget to send me some [pull requests](https://github.com/rmanalan/node-stashed)!
