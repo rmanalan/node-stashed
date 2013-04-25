@@ -24,10 +24,21 @@ exports = module.exports = function(opts){
     });
   }
 
-  return function render(templateName, ctx){
+  return function render(templateName){
+    var ctx = {};
+    var stripStyles = false;
+    [].concat(Array.prototype.slice.call(arguments)).slice(1).forEach(function(p){
+      if (typeof p === 'boolean') {
+        stripStyles = p;
+      } else if (typeof p === 'object') {
+        ctx = p;
+      }
+    });
     for(style in colors){
       registerHelper(style);
     };
-    return Handlebars.compile(loadTemplate(templateName))(ctx);
+    var renderedStr = Handlebars.compile(loadTemplate(templateName))(ctx);
+    return stripStyles ?
+      renderedStr.stripColors : renderedStr;
   }
 }

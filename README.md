@@ -44,9 +44,15 @@ This will render:
 
 ![Binds](http://f.cl.ly/items/3R412c1O1R090p021J0R/Screen%20Shot%202013-04-25%20at%2012.31.08%20AM.png)
 
+## Options
+
+    render( <String::filename_of_template_wo_ext>, 
+            [Object::context_object],
+            [Boolean::strip_colors] )
+
 ## Supported colors and styles
 
-Stashed uses [@marak](https://twitter.com/marak)'s awesome [colors.js](https://github.com/Marak/colors.js). Stashed exposes colors.js' colors and styles as Handlebars helpers:
+Stashed uses [@marak](https://twitter.com/marak)'s awesome [colors.js](https://github.com/Marak/colors.js). Stashed exposes colors.js' colors and styles as Handlebars block helpers:
 
 * bold
 * underline

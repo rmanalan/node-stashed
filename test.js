@@ -9,3 +9,10 @@ console.log(render('with_binds',{
   answer: "two",
   name: "Rich"
 }));
+
+console.log("\nNow without colors\n");
+console.log(render('basics', true));
+console.log(render('with_binds',{
+  answer: "two",
+  name: "Rich"
+}, true));
