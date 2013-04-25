@@ -44,6 +44,29 @@ This will render:
 
 ![Binds](http://f.cl.ly/items/3R412c1O1R090p021J0R/Screen%20Shot%202013-04-25%20at%2012.31.08%20AM.png)
 
+## Supported colors and styles
+
+Stashed uses [@marak](https://twitter.com/marak)'s awesome [colors.js](https://github.com/Marak/colors.js). Stashed exposes colors.js' colors and styles as Handlebars helpers:
+
+* bold
+* underline
+* italic
+* inverse
+* grey
+* black
+* yellow
+* red
+* green
+* blue
+* white
+* cyan
+* magenta
+* rainbow
+* zebra
+* zalgo
+
+To use these, all you have to do is wrap your text with `{{#style}}text{{/style}}`. You can nest styles too.
+
 ## Contribute
 
 Go nuts, but don't forget me some [pull requests](https://github.com/rmanalan/node-stashed)!
