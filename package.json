@@ -1,0 +1,21 @@
+{
+  "name": "stashed",
+  "version": "0.1.0",
+  "description": "Handlebars templates for CLIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "dependencies": {
+    "handlebars": "*",
+    "colors": "*",
+    "lodash": "*"
+  },
+  "repository": "",
+  "keywords": [
+    "cli",
+    "templates"
+  ],
+  "author": "Rich Manalang",
+  "license": "Apache 2.0"
+}
