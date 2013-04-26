@@ -40,6 +40,6 @@ exports = module.exports = function(opts){
     };
     var renderedStr = Handlebars.compile(loadTemplate(templateName))(ctx);
     return stripStyles ?
-      renderedStr.stripColors.strip() : renderedStr.strip();
+      renderedStr.stripColors() : renderedStr;
   }
 }
