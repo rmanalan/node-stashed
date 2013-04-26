@@ -8,7 +8,7 @@ exports = module.exports = function(opts){
   opts = _.extend({
     templateExt: ".hbs",
     templateDir: path.join(__dirname, './templates'),
-    colors: true
+    noColors: false
   }, opts);
 
   function loadTemplate(name, cb){
@@ -25,21 +25,14 @@ exports = module.exports = function(opts){
     });
   }
 
-  return function render(templateName){
+  return function render(templateName,context){
     var ctx = {};
-    var stripStyles = false;
-    [].concat(Array.prototype.slice.call(arguments)).slice(1).forEach(function(p){
-      if (typeof p === 'boolean') {
-        stripStyles = p;
-      } else if (typeof p === 'object') {
-        ctx = p;
-      }
-    });
+    if (typeof context === 'object') ctx = context;
     for(style in colors){
       registerHelper(style);
     };
     var renderedStr = Handlebars.compile(loadTemplate(templateName))(ctx);
-    return stripStyles ?
-      renderedStr.stripColors() : renderedStr;
+    return opts.noColors ?
+      colors.stripColors(renderedStr) : renderedStr;
   }
 }
