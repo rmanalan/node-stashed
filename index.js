@@ -7,7 +7,8 @@ var _ = require('lodash');
 exports = module.exports = function(opts){
   opts = _.extend({
     templateExt: ".hbs",
-    templateDir: path.join(__dirname, './templates')
+    templateDir: path.join(__dirname, './templates'),
+    colors: true
   }, opts);
 
   function loadTemplate(name, cb){
@@ -39,6 +40,6 @@ exports = module.exports = function(opts){
     };
     var renderedStr = Handlebars.compile(loadTemplate(templateName))(ctx);
     return stripStyles ?
-      renderedStr.stripColors : renderedStr;
+      renderedStr.stripColors.strip() : renderedStr.strip();
   }
 }
