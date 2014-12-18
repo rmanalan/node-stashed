@@ -25,12 +25,16 @@ exports = module.exports = function(opts){
     });
   }
 
+  for(style in colors){
+    registerHelper(style);
+  };
+  for(style in colors.styles){
+    registerHelper(style);
+  };
+
   return function render(templateName,context){
     var ctx = {};
     if (typeof context === 'object') ctx = context;
-    for(style in colors){
-      registerHelper(style);
-    };
     var renderedStr = Handlebars.compile(loadTemplate(templateName))(ctx);
     return opts.noColors ?
       colors.stripColors(renderedStr) : renderedStr;
