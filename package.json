@@ -1,6 +1,6 @@
 {
   "name": "stashed",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Handlebars templates for CLIs",
   "main": "index.js",
   "scripts": {
